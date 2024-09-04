@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Check if any arguments were passed
+if [ $# -eq 0 ]; then
+    echo "No arguments provided."
+    exit 1
+fi
+
+# Running the Python script with all the arguments
+python run.py "$@"
+
+
