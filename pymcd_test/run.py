@@ -12,9 +12,9 @@ import argparse
 import numpy as np
 
 ### ace-reaction libraries ###
-from pyMCD2 import chem
-from pyMCD2 import mcd
-from pyMCD2.utils import process
+from pymcd_test import chem
+from pymcd_test import mcd
+from pymcd_test.utils import process
 
 
 def parse_qc_content(f):
@@ -340,10 +340,10 @@ def change_option(args):
 def get_calculator(args):
     calculator_name = args.calculator.lower()
     if calculator_name == 'gaussian':
-        from pyMCD2.Calculator import gaussian
+        from pymcd_test.Calculator import gaussian
         calculator = gaussian.Gaussian(args.command)
     elif calculator_name == 'orca':
-        from pyMCD2.Calculator import orca
+        from pymcd_test.Calculator import orca
         calculator = orca.Orca(args.command)
     else:
         print (f'Wrong calculator (={calculator_name}) is given! Check the option file !!!')
@@ -373,6 +373,9 @@ def generate_path():
     output_directory = args.output_directory
     if output_directory is None:
         output_directory = os.path.dirname(input_directory)
+        print (output_directory)
+        if output_directory=='':
+            output_directory = os.getcwd()
     # If problem with input, output directory, automatically exit
     if not os.path.exists(input_directory):
         print ('Cannot find the input directory !!!')
@@ -433,9 +436,13 @@ def generate_path():
     pathway = scanner.scan(reactant,constraints,num_steps,chg = reactant.chg, multiplicity = reactant.multiplicity)
     return pathway
 
-if __name__ == '__main__':
+def main():
     pathway = generate_path()     
     if len(pathway) > 0:
         print ('MCD well terminated ...')
     else:
         print ('MCD did not run properly !!!')
+
+if __name__ == '__main__':
+    
+    main()

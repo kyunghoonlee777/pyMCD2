@@ -349,8 +349,8 @@ def get_internal_coordinate_info(coordinate_list,internal_coordinates):
 
 
 if __name__ == '__main__':
-    from pyMCD import chem
-    from pyMCD.utils import process
+    from pymcd_tset import chem
+    from pymcd_test.utils import process
     molecule = chem.Molecule('R.xyz')
     coordinate_list = molecule.get_coordinate_list()
     #print (internal_coordinates)

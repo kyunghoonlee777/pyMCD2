@@ -7,8 +7,8 @@ Some parts can be replaced by ASE formats, but now we are using these settings f
 
 import numpy as np
 
-from pyMCD2.utils import ic
-from pyMCD2.utils import process
+from pymcd_test.utils import ic
+from pymcd_test.utils import process
 
 
 class Atom:

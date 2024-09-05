@@ -10,7 +10,7 @@ import copy
 import numpy as np 
 import random
 
-from pyMCD2 import chem
+from pymcd_test import chem
 
 
 def locate_molecule(ace_molecule,coordinate_list):

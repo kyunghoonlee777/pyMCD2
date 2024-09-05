@@ -18,9 +18,9 @@ from scipy.signal import savgol_filter
 
 
 ### ace-reaction libraries ###
-import chem
-from utils import process
-from utils import ic
+from pymcd_test import chem
+from pymcd_test.utils import process
+from pymcd_test.utils import ic
 
 class MCD: # MultiCoordinate Driving method for finding MEP
     

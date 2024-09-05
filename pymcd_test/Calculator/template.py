@@ -10,8 +10,8 @@ import argparse
 import numpy as np
 
 ### ace-reaction libraries ###
-from pyMCD2 import chem
-from pyMCD2.utils import process
+from pymcd_test import chem
+from pymcd_test.utils import process
 
 '''
 You can define your own calculator, depending on your using software!!!

@@ -15,8 +15,8 @@ import distutils.spawn
 import cclib
 
 ### ace-reaction libraries ###
-from pyMCD2.utils import process
-from pyMCD2 import chem
+from pymcd_test import chem
+from pymcd_test.utils import process
 
 
 class Gaussian:
@@ -246,9 +246,12 @@ class Gaussian:
         self.move_file(file_name,save_directory)
         converter = 1
         if str.lower(self.energy_unit) == 'kcal':
-            converter = 23.06
+            converter = 2625.4996394799
         if str.lower(self.energy_unit) == 'hartree':
-            converter = 0.036749326681
+            converter = 1.0
+        if str.lower(self.energy_unit) == 'ev':
+            converter = 27.211386245988
+
         if 'opt' in self.content: 
             print ('Running optimization !!!')
             index = np.argmin(data.scfenergies)
@@ -285,9 +288,11 @@ class Gaussian:
         converter = 1
         os.chdir(current_directory)
         if str.lower(self.energy_unit) == 'kcal':
-            converter = 23.06
+            converter = 2625.4996394799
         if str.lower(self.energy_unit) == 'hartree':
-            converter = 0.036749326681
+            converter = 1.0
+        if str.lower(self.energy_unit) == 'ev':
+            converter = 27.211386245988
         #os.system('mv new.chk old.chk')
         os.chdir(current_directory)
         return converter*data.scfenergies[-1]
@@ -439,10 +444,11 @@ class Gaussian:
 
         converter = 1
         if str.lower(self.energy_unit) == 'kcal':
-            converter = 23.06
+            converter = 2625.4996394799
         if str.lower(self.energy_unit) == 'hartree':
-            converter = 0.036749326681
-            #converter = 1/27.2114
+            converter = 1.0
+        if str.lower(self.energy_unit) == 'ev':
+            converter = 27.211386245988
 
         energies *= converter
         minimum_energy = 10000000

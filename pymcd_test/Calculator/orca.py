@@ -13,8 +13,8 @@ import numpy as np
 import re
 
 ### ace-reaction libraries ###
-from pyMCD2 import chem
-from pyMCD2.utils import process
+from pymcd_test import chem
+from pymcd_test.utils import process
 
 
 '''
