@@ -1,2 +1,2 @@
-# pyMCD_v2
+# TSFlow
 A wrap-up version of original pyMCD
